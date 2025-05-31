@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.treasurenfts.live_proje",
+    "sha256_cert_fingerprints": ["33:E1:55:3C:E7:16:61:DD:13:52:A9:26:DC:E4:BA:33:EB:C7:70:12:ED:B8:3D:89:B5:8C:7F:48:A9:EF:8D:2733:E1:55:3C:E7:16:61:DD:13:52:A9:26:DC:E4:BA:33:EB:C7:70:12:ED:B8:3D:89:B5:8C:7F:48:A9:EF:8D:27"]
+  }
+}]
