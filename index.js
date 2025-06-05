@@ -1,7 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import axios from 'axios';
-import { Client, Users } from 'node-appwrite';
+import { Client, Users, Account } from "appwrite"; // ✅ CORRECT
+
 
 const app = express();
 const port = process.env.PORT || 3000;
