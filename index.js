@@ -41,7 +41,7 @@ app.post('/reset-password', async (req, res) => {
 });
 
 // ---------- NowPayments IPN endpoint ----------
-app.post('/nowpayments-ipn', async (req, res) => {
+app.get('/nowpayments-ipn', (req, res) => {
     try {
         const ipnData = req.body;
         console.log("Received IPN:", ipnData);
