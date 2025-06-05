@@ -12,8 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // ---------- Appwrite client setup ----------
 const client = new Client()
     .setEndpoint('https://fra.cloud.appwrite.io/v1')
-    .setProject('67cc44870036518f1c7b')
-    .setKey('standard_9ef65c3845ee85eb727832014f9f315b7a58e3454dcff55f47f65460ead76eceeab30052f98331325b6bbec642a9d08778a72502c4b131f0a1571e54d45c84d64d731498734405981c4151a018d449c0465f68fd195d8a89ed3c5d078234f75b353b536037f2a80bb65b95625dbe5492f61b21700b8c9f4e8f372b7873bafe0f');
+    .setProject('67cc44870036518f1c7b');
 
 const account = new Account(client);
 
