@@ -44,7 +44,7 @@ app.post('/nowpayments-ipn', async (req, res) => {
     // Appwrite Function Trigger
     const response = await axios.post(
       'https://fra.cloud.appwrite.io/v1/functions/68411df80026e2aec563/executions',
-      {}, // body if required
+      ipnData, // body if required
       {
         headers: {
           'X-Appwrite-Project': '67cc44870036518f1c7b',
