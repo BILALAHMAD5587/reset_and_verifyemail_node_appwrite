@@ -12,17 +12,16 @@ app.use(express.static("public"));
 // ✅ Asset Links route for Android app verification
 app.get("/.well-known/assetlinks.json", (req, res) => {
     res.json([
-        {
-            relation: ["delegate_permission/common.handle_all_urls"],
-            target: {
-                namespace: "android_app",
-                package_name: "com.treasurenfts.live_proje",
-                sha256_cert_fingerprints: [
-                    "33:E1:55:3C:E7:16:61:DD:13:52:A9:26:DC:E4:BA:33:EB:C7:70:12:ED:B8:3D:89:B5:8C:7F:48:A9:EF:8D:27"
-                ]
-            }
-        }
-    ]);
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.treasurenfts.live_proje",
+      "sha256_cert_fingerprints":
+        ["FB:65:E2:C4:78:56:F0:EE:26:D5:65:CA:6F:D6:7A:5B:17:6B:70:39:87:35:FD:EA:EE:F7:88:FE:43:12:0F:9C"]
+    }
+  }
+]);
 });
 
 // 🔸 Server Home
