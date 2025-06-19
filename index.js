@@ -9,19 +9,32 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
-// ✅ Asset Links route for Android app verification
+// ✅ Existing assetlinks.json route (perfect, no changes needed)
 app.get("/.well-known/assetlinks.json", (req, res) => {
-    res.json([
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.treasurenfts.live_proje",
-      "sha256_cert_fingerprints":
-        ["FB:65:E2:C4:78:56:F0:EE:26:D5:65:CA:6F:D6:7A:5B:17:6B:70:39:87:35:FD:EA:EE:F7:88:FE:43:12:0F:9C"]
+    res.json([{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.treasurenfts.live_proje",
+            "sha256_cert_fingerprints": [
+                "FB:65:E2:C4:78:56:F0:EE:26:D5:65:CA:6F:D6:7A:5B:17:6B:70:39:87:35:FD:EA:EE:F7:88:FE:43:12:0F:9C"
+            ]
+        }
+    }]);
+});
+
+// 🔥 NEW: Referral Route (Add this before 404 handler)
+app.get("/referral", (req, res) => {
+    const { code } = req.query;
+    
+    if (code) {
+        // Play Store redirect with referral tracking
+        const playStoreUrl = `https://play.google.com/store/apps/details?id=com.treasurenfts.live_proje&referrer=${code}`;
+        return res.redirect(playStoreUrl);
+    } else {
+        // If no code, redirect to Play Store without referral
+        return res.redirect('https://play.google.com/store/apps/details?id=com.treasurenfts.live_proje');
     }
-  }
-]);
 });
 
 // 🔸 Server Home
